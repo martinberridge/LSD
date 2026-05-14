@@ -14,8 +14,6 @@ Farthings are represented with special symbols: **¼d**, **½d**, **¾d**
 
 ## Features
 
-### ✅ Phase 1: Initialization & Conversion (Complete)
-
 - **Initialization**: Create amounts with pounds, shillings, pence, and farthings
 - **Factory Methods**: Create from decimal pounds, decimal pence, or farthings
 - **Decimal Conversion**: Convert to/from modern decimal currency (3 decimal places)
@@ -24,8 +22,6 @@ Farthings are represented with special symbols: **¼d**, **½d**, **¾d**
 - **Type Conversion**: `float()`, `int()` support
 - **Negative Values**: Support for debts/credits
 - **Farthing Precision**: Exact calculations using internal farthing storage
-
-### ✅ Phase 2: Arithmetic & Comparison (Complete)
 
 - **Arithmetic Operations**: `+`, `-`, `*`, `/`, `//`, `%` with OldMoney and numeric types
 - **Float Auto-Conversion**: Automatically converts floats in arithmetic (e.g., `OldMoney(1,0,0) + 0.5`)
@@ -36,10 +32,6 @@ Farthings are represented with special symbols: **¼d**, **½d**, **¾d**
 - **Boolean Conversion**: `bool()` returns `False` for zero, `True` otherwise
 - **Sorting**: Full comparison support enables sorting
 
-### 🔜 Coming Soon
-
-- **Phase 3**: Hashing, iteration, advanced formatting, `__getitem__`/`__setitem__`
-- **Phase 4**: Interactive demo and historical context
 
 ## Installation
 
@@ -102,7 +94,7 @@ print(debt)                         # "-£1 5s 6d"
 print(debt.is_negative())           # True
 ```
 
-### Arithmetic Operations (Phase 2)
+### Arithmetic Operations 
 
 ```python
 # Addition
@@ -124,7 +116,7 @@ debt = -OldMoney(1, 5, 6)                       # -£1 5s 6d
 amount = abs(debt)                               # £1 5s 6d
 ```
 
-### Comparison Operations (Phase 2)
+### Comparison Operations
 
 ```python
 # Comparisons work with OldMoney and floats
@@ -184,18 +176,10 @@ total_farthings = round(decimal_pounds × 960)
 then normalize to components
 ```
 
-## Design Decisions
-
-1. **Storage**: Internal farthings (integer) for precision
-2. **Precision**: Farthings (¼d) supported with special symbols
-3. **Float Conversion**: 3 decimal places by default
-4. **Float Arithmetic**: Auto-converts floats to OldMoney (Phase 2)
-5. **Negative Values**: Fully supported, no min/max limits
-6. **Immutability**: To be determined in Phase 2
 
 ## Examples Output
 
-**Phase 1 - Conversion:**
+** Conversion:**
 ```
 Traditional: £1 5s 6d
 Decimal: £1.275
@@ -222,7 +206,6 @@ Bill split 3 ways: 18s 6d each
 
 Comprehensive test suite covering:
 
-**Phase 1:**
 - Initialization and factory methods
 - Decimal/pence conversion accuracy
 - Round-trip conversions
@@ -231,7 +214,6 @@ Comprehensive test suite covering:
 - Edge cases (zero, very small/large amounts)
 - String representations
 
-**Phase 2:**
 - All arithmetic operations (`+`, `-`, `*`, `/`, `//`, `%`)
 - Float auto-conversion in arithmetic
 - Reverse operations (`__radd__`, `__rsub__`, etc.)
@@ -246,8 +228,6 @@ Run tests:
 ```bash
 python test_old_money.py
 ```
-
-Currently: **90+ passing tests**
 
 ## Project Structure
 
