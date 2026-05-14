@@ -1,0 +1,2 @@
+# Requirements for Pre-Decimal British Currency Project
+# Phase 1: No external dependencies required (using unittest from standard library)
